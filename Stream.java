@@ -1,16 +1,19 @@
 package com.addressbook.stream;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-public class AddressBookUC9 {
+public class AddressBookUC10 {
 
-	public static void main(String[] args) {  
-	//returns a list view   
-	List<String> stringlist = Arrays.asList("Aahan", "Shakshi", "Pappu", "Ganesh", "Kundan", "Suresh");  
-    //stringlist.stream().sorted().forEach(System.out::println);     
-	List<String> sortedList = stringlist.stream().sorted().collect(Collectors.toList());  
-    sortedList.forEach(System.out::println);  
-	}  
-    }
+	  public static void main(String[] args)
+	    {
+	        // creating stream of strings
+	        Stream<String> s = Stream.of("Ramesh","Suresh",
+	                        "Ganesh","Dinesh","Gopal","Aahan");
+	  
+	        // counting number of strings in stream
+	        long count_string =  s.collect(Collectors.counting());
+	  
+	        System.out.println(count_string);
+	    }
+	}
