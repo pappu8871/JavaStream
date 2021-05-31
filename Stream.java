@@ -1,22 +1,16 @@
 package com.addressbook.stream;
 
-import java.util.stream.Stream;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
-public class AddressBookUC8 {
-	 // Driver code
-    public static void main(String[] args)
-    {
-  
-        // Creating a Stream of Strings
-        Stream<String> stream = Stream.of("Aryan", "Aahan",
-                                          "Shalshi", "Ganesh","Ramesh");
-  
-        // Using Stream filter(Predicate predicate)
-        // to get a stream consisting of the
-        // elements ending with s
-        stream.filter(str -> str.endsWith("n"))
-            .forEach(System.out::println);
-    
+public class AddressBookUC9 {
+
+	public static void main(String[] args) {  
+	//returns a list view   
+	List<String> stringlist = Arrays.asList("Aahan", "Shakshi", "Pappu", "Ganesh", "Kundan", "Suresh");  
+    //stringlist.stream().sorted().forEach(System.out::println);     
+	List<String> sortedList = stringlist.stream().sorted().collect(Collectors.toList());  
+    sortedList.forEach(System.out::println);  
+	}  
     }
-}
-
